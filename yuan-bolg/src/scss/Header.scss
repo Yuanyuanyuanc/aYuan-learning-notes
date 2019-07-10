@@ -1,0 +1,6 @@
+@import './mixin.scss';
+
+.header {
+  @include wh(100%,90px);
+  background: #f5f5f5;
+}
