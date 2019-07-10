@@ -1,4 +1,4 @@
-import { ADDSTEP, REMOVESTEP, REMOVETOTAL, ADDTOTAL, SWITCHSHOW } from 'src/constants'
+import { ADDSTEP, REMOVESTEP, REMOVETOTAL, ADDTOTAL, SWITCHSHOW, COLORCONST, NUMBERCONST } from 'src/constants'
 
 // step
 
@@ -59,4 +59,34 @@ export interface SWITCHSHOWAction {
 // 切换 show 的方法
 export const switchShow = (): SWITCHSHOWAction => ({
   type: SWITCHSHOW
+})
+
+
+
+// color
+
+export interface COLORCONSTAction {
+  color: string,
+  type: COLORCONST
+}
+
+// 修改 color 的方法
+export const changeColor = (color: string): COLORCONSTAction => ({
+  color,
+  type: COLORCONST
+})
+
+
+
+// number
+
+export interface NUMBERCONSTAction {
+  number1: number,
+  type: NUMBERCONST
+}
+
+// 修改 number 的方法
+export const changeNumber = (number1: number): NUMBERCONSTAction => ({
+  number1,
+  type: NUMBERCONST
 })

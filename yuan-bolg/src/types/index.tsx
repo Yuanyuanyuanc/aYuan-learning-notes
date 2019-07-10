@@ -8,4 +8,6 @@ export interface StoreProgress {
   step: number;
   total: number;
   show?: boolean;
+  color?: string;
+  number1?: number;
 }
