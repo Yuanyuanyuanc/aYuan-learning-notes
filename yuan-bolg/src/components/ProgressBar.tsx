@@ -3,13 +3,14 @@ import * as React from 'react'
 interface Props {
   step: number;
   total: number;
-  // show?: boolean;
-  // color: string;
-  // number: number;
+  show?: boolean;
+  // color?: string;
+  // number?: number;
   onAddStep: () => void;
   onRemoveStep: () => void;
   onAddTotal: () => void;
   onRemoveTotal: () => void;
+  onSwitchShow: () => void;
 }
 
 export default class ProgressBar extends React.PureComponent<Props> {
@@ -18,13 +19,14 @@ export default class ProgressBar extends React.PureComponent<Props> {
     const {
       step,
       total,
-      // show = true,
+      show = true,
       // color = 'black',
       // number = 0,
       onAddStep,
       onRemoveStep,
       onAddTotal,
-      onRemoveTotal
+      onRemoveTotal,
+      onSwitchShow
     } = this.props
 
     return (
@@ -42,8 +44,8 @@ export default class ProgressBar extends React.PureComponent<Props> {
         </div>
 
         <div className="progress-show">
-          <button> change </button>
-          {/* showInfo: { show ? '显示' : '隐藏' } */}
+          <button onClick={ onSwitchShow }> change </button>
+          showInfo: { show ? '显示' : '隐藏' }
         </div>
 
         <div className="progress-color">

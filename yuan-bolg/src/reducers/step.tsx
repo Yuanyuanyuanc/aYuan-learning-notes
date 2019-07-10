@@ -1,5 +1,5 @@
-import { StepModifyAction, TotalModifyAction } from '../actions/progress'
-import { ADDSTEP, REMOVESTEP, ADDTOTAL, REMOVETOTAL } from '../constants'
+import { StepModifyAction, TotalModifyAction, SWITCHSHOWAction } from '../actions/progress'
+import { ADDSTEP, REMOVESTEP, ADDTOTAL, REMOVETOTAL, SWITCHSHOW } from '../constants'
 
 export const stepReducer = (step = 0, action: StepModifyAction): number => {
   switch (action.type) {
@@ -25,6 +25,17 @@ export const totalReducer = (total = 0, action: TotalModifyAction): number => {
       break;
     default:
       return total
+      break;
+  }
+}
+
+export const showReducer = (show = true, action: SWITCHSHOWAction): boolean => {
+  switch (action.type) {
+    case SWITCHSHOW:
+      return show = !show
+      break;
+    default:
+      return show
       break;
   }
 }

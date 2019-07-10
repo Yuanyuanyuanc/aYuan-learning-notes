@@ -22,3 +22,8 @@ export type ADDTOTAL = typeof ADDTOTAL
 // 定义减少 step 类型常量
 export const REMOVETOTAL = 'REMOVETOTAL'
 export type REMOVETOTAL = typeof REMOVETOTAL
+
+
+// 定义切换隐藏 show 类型产量
+export const SWITCHSHOW = 'SWITCHSHOW'
+export type SWITCHSHOW = typeof SWITCHSHOW

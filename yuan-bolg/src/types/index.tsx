@@ -7,4 +7,5 @@ export interface StoreState {
 export interface StoreProgress {
   step: number;
   total: number;
+  show?: boolean;
 }

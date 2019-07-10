@@ -1,4 +1,4 @@
-import { ADDSTEP, REMOVESTEP, REMOVETOTAL, ADDTOTAL } from 'src/constants'
+import { ADDSTEP, REMOVESTEP, REMOVETOTAL, ADDTOTAL, SWITCHSHOW } from 'src/constants'
 
 // step
 
@@ -47,4 +47,16 @@ export const addTotal = (): ADDTOTALAction => ({
 // 减少 step 次数的方法
 export const removeTotal = (): REMOVETOTALAction => ({
   type: REMOVETOTAL
+})
+
+
+// show
+
+export interface SWITCHSHOWAction {
+  type: SWITCHSHOW
+}
+
+// 切换 show 的方法
+export const switchShow = (): SWITCHSHOWAction => ({
+  type: SWITCHSHOW
 })
