@@ -1,7 +1,9 @@
-import { StepModifyAction, TotalModifyAction, SWITCHSHOWAction, COLORCONSTAction, NUMBERCONSTAction } from '../actions/progress'
-import { ADDSTEP, REMOVESTEP, ADDTOTAL, REMOVETOTAL, SWITCHSHOW, COLORCONST, NUMBERCONST } from '../constants'
+import { StepModifyAction, TotalModifyAction, SWITCHSHOWAction, COLORCONSTAction } from '../actions/progress'
+import { ADDSTEP, REMOVESTEP, ADDTOTAL, REMOVETOTAL, SWITCHSHOW, COLORCONST } from '../constants'
 
-export const stepReducer = (step = 0, action: StepModifyAction): number => {
+export const stepReducer = (step = 5, action: StepModifyAction): number => {
+  console.log('step: ', step)
+  console.log('action: ', action)
   switch (action.type) {
     case ADDSTEP:
       return step += 1
@@ -15,7 +17,7 @@ export const stepReducer = (step = 0, action: StepModifyAction): number => {
   }
 }
 
-export const totalReducer = (total = 0, action: TotalModifyAction): number => {
+export const totalReducer = (total = 10, action: TotalModifyAction): number => {
   switch (action.type) {
     case ADDTOTAL:
       return total += 1
@@ -47,21 +49,6 @@ export const colorReducer = (color = 'black', action: COLORCONSTAction): string 
       break;
     default:
       return color
-      break;
-  }
-}
-
-// number1为上一次的number1 
-// action.number1为当前的number1
-export const numberReducer = (number1 = 0, action: NUMBERCONSTAction): number => {
-  console.log('action: ', action)
-  switch (action.type) {
-    case NUMBERCONST:
-      console.log(NUMBERCONST)
-      return action.number1
-      break;
-    default:
-      return number1
       break;
   }
 }

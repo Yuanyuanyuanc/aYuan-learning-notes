@@ -1,18 +1,18 @@
 import * as React from 'react'
 
+import '../scss/ProgressBar.min.css';
+
 interface Props {
-  step: number;
-  total: number;
+  step?: number;
+  total?: number;
   show?: boolean;
   color?: string;
-  number1?: number;
   onAddStep: () => void;
   onRemoveStep: () => void;
   onAddTotal: () => void;
   onRemoveTotal: () => void;
   onSwitchShow: () => void;
   onChangeColor: (color: string) => void;
-  onChangeNumber: (number1: number) => void;
 }
 
 export default class ProgressBar extends React.PureComponent<Props> {
@@ -26,19 +26,20 @@ export default class ProgressBar extends React.PureComponent<Props> {
   public render() {
 
     const {
-      step,
-      total,
+      step = 5,
+      total = 10,
       show = true,
       color = 'black',
-      number1 = 0,
       onAddStep,
       onRemoveStep,
       onAddTotal,
       onRemoveTotal,
       onSwitchShow,
-      onChangeColor,
-      onChangeNumber
+      onChangeColor
     } = this.props
+
+    // 比例
+    const width = Math.floor(step / total * 100)
 
     return (
       <div className="progress">
@@ -59,14 +60,21 @@ export default class ProgressBar extends React.PureComponent<Props> {
           showInfo: { show ? '显示' : '隐藏' }
         </div>
 
-        <div className="progress-color" style={{ color: this.randomRGBColor() }}>
+        <div className="progress-color" style={{ color }}>
           <button onClick={ () => onChangeColor(this.randomRGBColor()) }> change </button>
           color: { color }
         </div>
 
-        <div className="progress-bar" onClick={ () => onChangeNumber(20) }>
-          <p> { number1 }% </p>
+        <br/>
+
+        <div className="progress-bar" >
+          <div className="progress-bar-position" style={{
+            width: width * 2,
+            backgroundColor: color
+          }} />
         </div>
+
+        { show && <p className="progress-number"> { width }% </p> }
       </div>
     )
   }

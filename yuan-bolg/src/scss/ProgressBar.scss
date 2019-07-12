@@ -1,0 +1,22 @@
+@import './mixin.scss';
+
+.progress {
+  
+  &-bar {
+    position: relative;
+    @include wh(200px,20px);
+    @include radius(10px);
+    background: #ccc;
+
+    &-position {
+      @include lt;
+      @include radius(10px);
+      height: 100%;
+    }
+  }
+
+  &-number {
+    @include wh(200px,20px);
+    text-align: center;
+  }
+}
