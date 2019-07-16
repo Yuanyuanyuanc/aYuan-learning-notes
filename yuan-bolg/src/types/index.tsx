@@ -9,5 +9,5 @@ export interface StoreProgress {
   total?: number;
   show?: boolean;
   color?: string;
-  number1?: number;
+  number1?: number
 }
