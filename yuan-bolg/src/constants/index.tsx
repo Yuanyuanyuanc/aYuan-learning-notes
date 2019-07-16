@@ -31,7 +31,3 @@ export type SWITCHSHOW = typeof SWITCHSHOW
 // 定义 color 类型常量
 export const COLORCONST = 'COLORCONST'
 export type COLORCONST = typeof COLORCONST
-
-// 定义 number 类型常量
-export const NUMBERCONST = 'NUMBERCONST'
-export type NUMBERCONST = typeof NUMBERCONST

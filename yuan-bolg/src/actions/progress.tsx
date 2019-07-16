@@ -1,4 +1,4 @@
-import { ADDSTEP, REMOVESTEP, REMOVETOTAL, ADDTOTAL, SWITCHSHOW, COLORCONST, NUMBERCONST } from 'src/constants'
+import { ADDSTEP, REMOVESTEP, REMOVETOTAL, ADDTOTAL, SWITCHSHOW, COLORCONST } from 'src/constants'
 
 // step
 
@@ -74,19 +74,4 @@ export interface COLORCONSTAction {
 export const changeColor = (color: string): COLORCONSTAction => ({
   color,
   type: COLORCONST
-})
-
-
-
-// number
-
-export interface NUMBERCONSTAction {
-  number1: number,
-  type: NUMBERCONST
-}
-
-// 修改 number 的方法
-export const changeNumber = (number1: number): NUMBERCONSTAction => ({
-  number1,
-  type: NUMBERCONST
 })

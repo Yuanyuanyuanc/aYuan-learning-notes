@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import { Dispatch } from 'redux'
 
-import { addStep, removeStep, addTotal, removeTotal, switchShow, changeColor, changeNumber } from '../actions/progress'
+import { addStep, removeStep, addTotal, removeTotal, switchShow, changeColor } from '../actions/progress'
 import ProgressBar from '../components/ProgressBar'
 import { StoreProgress } from '../types'
 
@@ -11,18 +11,17 @@ import { StoreProgress } from '../types'
 const mapStateToProps = (state: StoreProgress): StoreProgress => {
   console.log('state: ', state)
   return ({
-  color: state.color,
-  number1: state.number1,
-  show: state.show,
-  step: state.step,
-  total: state.total
-})}
+    color: state.color,
+    show: state.show,
+    step: state.step,
+    total: state.total
+  })
+}
 
 const mapDispatchToProps = (dispatch: Dispatch, ownProps: any) => ({
   onAddStep: () => dispatch(addStep()),
   onAddTotal: () => dispatch(addTotal()),
   onChangeColor: (color: string) => dispatch(changeColor(color)),
-  onChangeNumber: (number1: number) => dispatch(changeNumber(number1)),
   onRemoveStep: () => dispatch(removeStep()),
   onRemoveTotal: () => dispatch(removeTotal()),
   onSwitchShow: () => dispatch(switchShow())
